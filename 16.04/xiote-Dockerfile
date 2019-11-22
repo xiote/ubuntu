@@ -3,6 +3,7 @@ MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 RUN apt-get update && apt-get install -y openssh-server curl vim git
 
+# git config
 RUN git config --global credential.helper cache
 
 RUN mkdir /var/run/sshd
