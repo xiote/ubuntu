@@ -1,7 +1,8 @@
 FROM       ubuntu:16.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
-RUN apt-get update && apt-get install -y openssh-server curl vim git
+RUN apt-get update && apt-get install -y openssh-server curl vim git ruby-full build-essential zlib1g-dev
+RUN gem install jekyll bundler
 
 # git config
 RUN git config --global credential.helper cache
