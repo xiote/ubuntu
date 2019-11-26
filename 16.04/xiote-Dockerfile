@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y openssh-server curl vim git software-pr
 RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update && apt-get install -y ruby2.4 ruby2.4-dev build-essential zlib1g-dev
 
+RUN gem update --system
 RUN gem install jekyll bundler
 
 # git config
