@@ -3,11 +3,16 @@ MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 RUN apt-get update && apt-get install -y openssh-server curl vim git software-properties-common
 
+# jekyll config
 RUN apt-add-repository ppa:brightbox/ruby-ng
 RUN apt-get update && apt-get install -y ruby2.4 ruby2.4-dev build-essential zlib1g-dev
 
 RUN gem update --system
 RUN gem install jekyll bundler
+
+#RUN jekyll new myblog
+#RUN cd myblog
+#RUN bundle exec jekyll serve
 
 # git config
 RUN git config --global credential.helper cache
