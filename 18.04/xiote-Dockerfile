@@ -3,10 +3,6 @@ MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools
 
-# go
-wget https://dl.google.com/go/go1.13.4.darwin-amd64.tar.gz
-tar -C /usr/local -xzf go1.13.4.darwin-amd64.tar.gz
-
 # git
 RUN git config --global credential.helper cache
 
