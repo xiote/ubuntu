@@ -8,6 +8,10 @@ RUN echo "source ~/alias.sh;" >> ~/.bashrc
 # install components
 RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools
 
+# go
+RUN wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
+
 # git
 RUN git config --global credential.helper cache
 
