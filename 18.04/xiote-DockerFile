@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools
 wget https://dl.google.com/go/go1.13.4.darwin-amd64.tar.gz
 tar -C /usr/local -xzf go1.13.4.darwin-amd64.tar.gz
 
-# git config
+# git
 RUN git config --global credential.helper cache
 
 RUN mkdir /var/run/sshd
