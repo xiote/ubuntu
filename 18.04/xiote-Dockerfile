@@ -6,7 +6,10 @@ RUN echo "curl -L http://gitlab.krei.co.kr:90/nextep/common/raw/master/alias.sh 
 RUN echo "source ~/alias.sh;" >> ~/.bashrc
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools
+RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh
+
+# zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 # go
 RUN wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
