@@ -2,7 +2,7 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh locales
+RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh locales apt-utils
 
 # locale
 # https://compose.tistory.com/entry/우분투-Docker-zsh-사용시-발생하는-문자-중복-출력-해결법
