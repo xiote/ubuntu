@@ -14,7 +14,7 @@ RUN echo "source ~/alias.sh;" >> ~/.zshrc
 RUN echo "alias src='. ~/.zshrc'" >> ~/.zshrc
 
 #vimgolf
-RUN apt-get update && apt-get install -y 
+RUN apt-get update && apt-get install -y ruby-full
 RUN gem install vimgolf
 
 # go
