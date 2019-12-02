@@ -2,14 +2,13 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh locales apt-utils
+RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh language-pack-ko
 
 # locale
-# https://compose.tistory.com/entry/우분투-Docker-zsh-사용시-발생하는-문자-중복-출력-해결법
-RUN locale-gen en_US.UTF-8
-RUN dpkg-reconfigure locale
-RUN dpkg-reconfigure keyboard-configuration
-RUN localedef -i en_US -c -f UTF-8 en_US.UTF-8
+# https://beomi.github.io/2017/07/10/Ubuntu-Locale-to-ko_KR/
+RUN locale-gen ko_KR.UTF-8
+RUN dpkg-reconfigure locales
+RUN update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
 
 # zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
