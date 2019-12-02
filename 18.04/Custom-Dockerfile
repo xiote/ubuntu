@@ -13,6 +13,12 @@ RUN echo "curl -L http://gitlab.krei.co.kr:90/nextep/common/raw/master/alias.sh 
 RUN echo "source ~/alias.sh;" >> ~/.zshrc
 RUN echo "alias src='. ~/.zshrc'" >> ~/.zshrc
 
+#vimgolf
+RUN apt-get update && apt-get install -y 
+RUN gem install vimgolf
+RUN vimgolf setup
+
+
 # go
 RUN wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
