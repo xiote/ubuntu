@@ -12,6 +12,7 @@ RUN export LC_ALL=ko_KR.UTF-8
 RUN locale-gen ko_KR.UTF-8
 RUN dpkg-reconfigure locales
 RUN update-locale LANG=ko_KR.UTF-8 LANGUAGE=ko_KR.UTF-8
+RUN locale
 
 # zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
