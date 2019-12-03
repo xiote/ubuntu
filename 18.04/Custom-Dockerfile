@@ -2,7 +2,7 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh language-pack-ko
+RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh apt-utils language-pack-ko
 
 # locale
 # https://beomi.github.io/2017/07/10/Ubuntu-Locale-to-ko_KR/
