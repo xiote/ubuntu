@@ -4,18 +4,6 @@ MAINTAINER Jinwoo Han "https://github.com/xiote"
 # install components
 RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh
 
-# locale
-# https://beomi.github.io/2017/07/10/Ubuntu-Locale-to-ko_KR/
-# https://zunonia.wordpress.com/2014/02/27/ubuntu에서-언어셋이-관련-에러-처리법/
-#RUN export LANGUAGE=ko_KR.UTF-8
-#RUN export LC_ALL=ko_KR.UTF-8
-#RUN locale-gen ko_KR.UTF-8
-#RUN dpkg-reconfigure locales
-#RUN update-locale LANG=ko_KR.UTF-8 LANGUAGE=ko_KR.UTF-8
-#RUN locale
-# https://www.44bits.io/ko/post/setup_linux_locale_on_ubuntu_and_debian_container
-ENV LC_ALL=C.UTF-8
-
 # zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 RUN chsh -s $(which zsh)
@@ -24,6 +12,10 @@ RUN chsh -s $(which zsh)
 RUN echo "curl -L http://gitlab.krei.co.kr:90/nextep/common/raw/master/alias.sh -o ~/alias.sh;" >> ~/.zshrc
 RUN echo "source ~/alias.sh;" >> ~/.zshrc
 RUN echo "alias src='. ~/.zshrc'" >> ~/.zshrc
+
+# locale
+# https://www.44bits.io/ko/post/setup_linux_locale_on_ubuntu_and_debian_container
+RUN echo "export LC_ALL=C.UTF-8" >> ~/.zshrc
 
 #vimgolf
 RUN apt-get update && apt-get install -y ruby-full
