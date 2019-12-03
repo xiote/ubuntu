@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools z
 # https://beomi.github.io/2017/07/10/Ubuntu-Locale-to-ko_KR/
 RUN locale-gen ko_KR.UTF-8
 RUN dpkg-reconfigure locales
-RUN update-locale LANG=ko_KR.UTF-8 LANGUAGE=ko_KR.UTF-8 LC_MESSAGES=POSIX
+RUN update-locale LANG=ko_KR.UTF-8 LANGUAGE=ko_KR.UTF-8
 
 # zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
