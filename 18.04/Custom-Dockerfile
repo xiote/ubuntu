@@ -2,16 +2,9 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools
-
-# python
-RUN apt-get update && apt-get install -y python-pip python-dev build-essential
-
-# dropbox
-RUN apt-get update && apt-get install -y libatomic1
+RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools python-pip python-dev build-essential libatomic1 zsh ruby-full
 
 # zsh
-RUN apt-get update && apt-get install -y zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 RUN chsh -s $(which zsh)
 
@@ -21,7 +14,6 @@ RUN echo "source ~/alias.sh;" >> ~/.zshrc
 RUN echo "alias src='. ~/.zshrc'" >> ~/.zshrc
 
 #vimgolf
-RUN apt-get update && apt-get install -y ruby-full
 RUN gem install vimgolf
 
 # go
