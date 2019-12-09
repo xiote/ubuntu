@@ -2,9 +2,17 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools zsh
+RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools
+
+# python
+RUN apt-get update && apt-get install -y python-pip python-dev build-essential
+
+# dropbox
+RUN apt-get update && apt-get install -y libatomic1
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
 # zsh
+RUN apt-get update && apt-get install -y zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 RUN chsh -s $(which zsh)
 
@@ -12,10 +20,6 @@ RUN chsh -s $(which zsh)
 RUN echo "curl -L http://gitlab.krei.co.kr:90/nextep/common/raw/master/alias.sh -o ~/alias.sh;" >> ~/.zshrc
 RUN echo "source ~/alias.sh;" >> ~/.zshrc
 RUN echo "alias src='. ~/.zshrc'" >> ~/.zshrc
-
-# locale
-# https://www.44bits.io/ko/post/setup_linux_locale_on_ubuntu_and_debian_container
-RUN echo "export LC_ALL=C.UTF-8" >> ~/.zshrc
 
 #vimgolf
 RUN apt-get update && apt-get install -y ruby-full
@@ -25,9 +29,10 @@ RUN gem install vimgolf
 RUN wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
 
-# git
+# git setting
 RUN git config --global credential.helper cache
 
+# sshd setting
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
