@@ -27,6 +27,9 @@ RUN tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
 # git setting
 RUN git config --global credential.helper cache
 
+# Expose the Dropbox directory
+VOLUME /root/Dropbox
+
 # sshd setting
 RUN mkdir /var/run/sshd
 
