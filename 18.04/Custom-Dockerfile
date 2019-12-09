@@ -21,7 +21,7 @@ RUN echo "export LC_ALL=C.UTF-8" >> ~/.zshrc
 RUN cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ADD https://www.dropbox.com/download?dl=packages/dropbox.py /bin/dropbox.py
 RUN chmod 755 /bin/dropbox.py
-CMD /root/.dropbox-dist/dropboxd
+#CMD /root/.dropbox-dist/dropboxd
 
 #vimgolf
 RUN gem install vimgolf
