@@ -31,7 +31,7 @@ RUN git config --global credential.helper cache
 # https://linoxide.com/linux-how-to/install-dropbox-ubuntu/
 RUN wget -O /usr/local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
 RUN chmod +x /usr/local/bin/dropbox
-RUN dropbox start -i
+#RUN dropbox start
 
 # Expose the Dropbox directory
 VOLUME /root/Dropbox
