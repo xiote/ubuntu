@@ -34,7 +34,7 @@ RUN chmod +x /usr/local/bin/dropbox
 # RUN dropbox start
 
 # Expose the Dropbox directory
-VOLUME /root/Dropbox
+#VOLUME /root/Dropbox
 
 # sshd setting
 RUN mkdir /var/run/sshd
