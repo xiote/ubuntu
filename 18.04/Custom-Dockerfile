@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y python-pip python-dev build-essential
 
 # dropbox
 RUN apt-get update && apt-get install -y libatomic1
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+RUN cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
 # zsh
 RUN apt-get update && apt-get install -y zsh
