@@ -27,6 +27,12 @@ RUN tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
 # git setting
 RUN git config --global credential.helper cache
 
+# dropbox cli
+# https://linoxide.com/linux-how-to/install-dropbox-ubuntu/
+RUN wget -O /usr/local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
+RUN chmod +x /usr/local/bin/dropbox
+# RUN dropbox start
+
 # Expose the Dropbox directory
 VOLUME /root/Dropbox
 
