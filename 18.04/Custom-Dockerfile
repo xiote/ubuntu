@@ -2,7 +2,7 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools python wget zsh ruby-full
+RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools python libatomic1 wget zsh ruby-full
 
 # zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
@@ -16,12 +16,6 @@ RUN echo "alias src='. ~/.zshrc'" >> ~/.zshrc
 # locale
 # https://www.44bits.io/ko/post/setup_linux_locale_on_ubuntu_and_debian_container
 RUN echo "export LC_ALL=C.UTF-8" >> ~/.zshrc
-
-# dropbox
-RUN cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-ADD https://www.dropbox.com/download?dl=packages/dropbox.py /bin/dropbox.py
-RUN chmod 755 /bin/dropbox.py
-#CMD /root/.dropbox-dist/dropboxd
 
 #vimgolf
 RUN gem install vimgolf
