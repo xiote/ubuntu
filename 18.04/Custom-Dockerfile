@@ -2,15 +2,16 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools python libatomic1 wget zsh ruby-full w3m
+RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools python libatomic1 wget zsh ruby-full
 
 # zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 RUN chsh -s $(which zsh)
 
 # alias
-RUN echo "curl -L http://gitlab.krei.co.kr:90/nextep/common/raw/master/alias.sh -o ~/alias.sh;" >> ~/.zshrc
-RUN echo "source ~/alias.sh;" >> ~/.zshrc
+#RUN echo "curl -L http://gitlab.krei.co.kr:90/nextep/common/raw/master/alias.sh -o ~/alias.sh;" >> ~/.zshrc
+#RUN echo "source ~/alias.sh;" >> ~/.zshrc
+RUN echo "source ~/Dropbox/managed/.zshrc" >> ~/.zshrc
 RUN echo "alias src='. ~/.zshrc'" >> ~/.zshrc
 
 # locale
