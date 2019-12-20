@@ -11,8 +11,10 @@ RUN chsh -s $(which zsh)
 # alias
 #RUN echo "curl -L http://gitlab.krei.co.kr:90/nextep/common/raw/master/alias.sh -o ~/alias.sh;" >> ~/.zshrc
 #RUN echo "source ~/alias.sh;" >> ~/.zshrc
-RUN echo "source ~/Dropbox/managed/.zshrc" >> ~/.zshrc
+RUN echo "alias d='dropbox'" >> ~/.zshrc
 RUN echo "alias src='. ~/.zshrc'" >> ~/.zshrc
+RUN echo "source ~/Dropbox/managed/.zshrc" >> ~/.zshrc
+
 
 # locale
 # https://www.44bits.io/ko/post/setup_linux_locale_on_ubuntu_and_debian_container
