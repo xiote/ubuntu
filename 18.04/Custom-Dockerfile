@@ -2,7 +2,7 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y openssh-server curl vim git net-tools python libatomic1 wget zsh ruby-full
+RUN apt-get update && apt-get install -y curl vim git net-tools python wget zsh ruby-full
 
 # zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
@@ -27,12 +27,6 @@ RUN tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
 
 # git setting
 # RUN git config --global credential.helper cache
-
-# dropbox cli
-# https://linoxide.com/linux-how-to/install-dropbox-ubuntu/
-RUN wget -O /usr/local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
-RUN chmod +x /usr/local/bin/dropbox
-#RUN dropbox start
 
 # Expose the Dropbox directory
 VOLUME /root/Dropbox
