@@ -2,7 +2,7 @@ FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
 # install components
-RUN apt-get update && apt-get install -y curl vim git net-tools python wget zsh ruby-full
+RUN apt-get update && apt-get install -y curl vim git net-tools wget zsh ruby-full
 
 # zsh
 RUN sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
