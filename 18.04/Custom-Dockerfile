@@ -1,6 +1,9 @@
 FROM       ubuntu:18.04
 MAINTAINER Jinwoo Han "https://github.com/xiote"
 
+# environment
+ENV SHELL=/usr/bin/zsh
+
 # install components
 RUN apt-get update && apt-get install -y curl vim git net-tools wget zsh ruby-full
 
@@ -23,9 +26,6 @@ RUN gem install vimgolf
 # go
 RUN wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
-
-# environment
-RUN export SHELL='/usr/bin/zsh'
 
 # git setting
 # RUN git config --global credential.helper cache
