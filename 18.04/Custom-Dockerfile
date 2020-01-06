@@ -18,7 +18,7 @@ RUN echo "curl -L https://raw.githubusercontent.com/xiote/zsh/master/.zshrc -o ~
 RUN echo "source ~/.MyZshrc" >> ~/.zshrc
 
 # jsonlint for vim
-npm install -g jsonlint
+RUN npm install -g jsonlint
 
 # locale
 # https://www.44bits.io/ko/post/setup_linux_locale_on_ubuntu_and_debian_container
